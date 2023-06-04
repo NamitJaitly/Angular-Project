@@ -1,1 +1,21 @@
-<p>todo-list works!</p>
+<div class="content-wrapper">
+  <div class="content-heading flex align-center space-between">
+    <span class="block">My Todo List</span>
+    <button mat-button color="accent" class="bg-white" [routerLink]="'add'">
+      Add Todo
+    </button>
+  </div>
+  <ul *ngIf="todoList != 0">
+    <li class="list-item" *ngFor="let element of todoList; let i = index">
+      <span class="list-style">{{i + 1}}</span>
+      <div>
+        <a> {{ element.taskName }} </a>
+        <span class="lower-cap">{{ element.taskEnd }}</span>
+      </div>
+      <button mat-button color="accent" (click)="deleteTodo(i)">X</button>
+    </li>
+  </ul>
+  <div *ngIf="todoList == 0" class="empty-list">
+    <span>No Items in Your Todo List now!</span>
+  </div>
+</div>

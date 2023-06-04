@@ -1,1 +1,9 @@
-<p>header works!</p>
+<div class="main-header pointer align-center" [routerLink]="''">
+  <span class="block">Namit's Project</span>
+  <div class="flex align-center">
+    <button mat-flat-button color="accent" (click)="showInput()">
+      Enter Your Name
+    </button>
+    <span class="block ml-2">Welcome, {{ UserName ? UserName : "User" }}</span>
+  </div>
+</div>

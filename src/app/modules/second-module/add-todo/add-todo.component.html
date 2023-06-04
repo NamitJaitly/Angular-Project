@@ -1,0 +1,31 @@
+<div class="content-wrapper">
+  <div class="content-heading flex align-center space-between">
+    <span class="block">Add todos</span>
+    <button mat-button color="accent" class="bg-white" [routerLink]="'/second'">
+      Back to list
+    </button>
+  </div>
+  <form [formGroup]="addTodo" (ngSubmit)="onSubmit()">
+    <mat-form-field class="block">
+      <span class="block input-block">Task Name</span>
+      <input
+        required
+        mat-input
+        type="text"
+        placeholder="Enter Task Name"
+        formControlName="taskName"
+      />
+    </mat-form-field>
+    <mat-form-field class="block">
+      <span class="block input-block">Task Limit</span>
+      <select mat-input formControlName="taskEnd" required class="block">
+        <option value="today">Today</option>
+        <option value="One Week">One Week</option>
+        <option value="One Month">One Month</option>
+      </select>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" class="block">
+      Submit
+    </button>
+  </form>
+</div>
