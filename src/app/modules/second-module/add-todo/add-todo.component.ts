@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControlName } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -8,25 +8,28 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTodoComponent implements OnInit {
-  addTodo: FormGroup;
+  addTodo: FormGroup
 
-  constructor(private form: FormBuilder, private todoRules: TodoService) {
+  constructor(
+    private form: FormBuilder,
+    private todoRules: TodoService) {}
+
+  ngOnInit(){
     this.addTodo = this.form.group({
-      taskName: [''],
-      taskEnd: [''],
+      taskName: ['',Validators.required],
+      taskEnd: ['', Validators.required],
     });
+    console.log(this.addTodo);
+    
+    // this.addTodo 
   }
 
-  ngOnInit(): void {}
-
   onSubmit() {
-    if(this.addTodo.valid){
+    if (this.addTodo.valid) {
       this.todoRules.todoListData.push(this.addTodo.value);
-      console.log(this.addTodo.value);
-      this.addTodo.reset()
-    }
-    else{
-      alert('Fill All Required Fields!')
+      this.addTodo.reset();
+    } else {
+      alert('Fill All Required Fields!');
     }
   }
 }

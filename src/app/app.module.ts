@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './core/layout/main/main.component';
-import { HeaderComponent } from './core/layout/header/header.component';
+import { MainComponent } from './main/main.component';
+import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material/material.module';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [

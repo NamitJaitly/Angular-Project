@@ -30,7 +30,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    MatCardModule, 
+    MatCheckboxModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule   
   ],
   exports: [
     MatButtonModule,

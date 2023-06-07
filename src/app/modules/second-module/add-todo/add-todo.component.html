@@ -8,21 +8,18 @@
   <form [formGroup]="addTodo" (ngSubmit)="onSubmit()">
     <mat-form-field class="block">
       <span class="block input-block">Task Name</span>
-      <input
-        required
-        mat-input
+      <input matInput
         type="text"
         placeholder="Enter Task Name"
-        formControlName="taskName"
-      />
+        formControlName="taskName"/>
     </mat-form-field>
     <mat-form-field class="block">
       <span class="block input-block">Task Limit</span>
-      <select mat-input formControlName="taskEnd" required class="block">
-        <option value="today">Today</option>
-        <option value="One Week">One Week</option>
-        <option value="One Month">One Month</option>
-      </select>
+      <mat-select formControlName="taskEnd" class="block">
+        <mat-option value="today">Today</mat-option>
+        <mat-option value="One Week">One Week</mat-option>
+        <mat-option value="One Month">One Month</mat-option>
+      </mat-select>
     </mat-form-field>
     <button mat-raised-button color="accent" type="submit" class="block">
       Submit
