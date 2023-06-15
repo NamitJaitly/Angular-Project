@@ -4,7 +4,7 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'main',
     component: MainComponent,
     children: [
       {
@@ -16,6 +16,12 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '',
+    loadChildren: () => import('./modules/master/master.module').then(
+      (m) => m.MasterModule
+    )
+  }
 ];
 
 @NgModule({

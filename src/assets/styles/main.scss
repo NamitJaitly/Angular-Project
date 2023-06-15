@@ -1,5 +1,12 @@
-body{
+body {
   box-sizing: border-box;
+}
+$dimensions: 0.3125rem;
+$spacing: 0.25rem;
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined" !important;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 .main-header {
   background-color: rgb(39, 122, 255);
@@ -40,7 +47,7 @@ body{
     position: relative;
   }
 }
-.content-heading{
+.content-heading {
   padding: 12px;
   border-radius: 4px;
   background-color: rgb(100, 20, 20);
@@ -55,7 +62,7 @@ body{
 .flex {
   display: flex;
 }
-.space-between{
+.space-between {
   justify-content: space-between;
 }
 .align-center {
@@ -64,15 +71,15 @@ body{
 .ml-2 {
   margin-left: 10px;
 }
-.bg-white{
+.bg-white {
   background-color: white;
 }
-.empty-list{
+.empty-list {
   padding: 15px;
   background-color: rgb(244, 228, 228);
   border-radius: 4px;
 }
-.list-style{
+.list-style {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -86,11 +93,11 @@ body{
   justify-content: center;
   font-size: 24px;
   font-weight: 500;
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     display: block;
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
     border-left: 8px solid rgb(100, 20, 20);
@@ -98,12 +105,683 @@ body{
     right: -8px;
   }
 }
-.lower-cap{
+.lower-cap {
   font-size: 10px;
   color: #6c6c6c;
   display: block;
   line-height: 1;
 }
-.block{
+.block {
   display: block;
+}
+// List
+// 1. Flexbox
+// 2. Width & Height
+// 3. Position
+// 4. Utility Classes
+// 5. Angular Material
+
+//disable docs controls
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif !important;
+}
+
+html {
+  font-size: 16px !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 100%;
+  height: 100% !important;
+  background-color: transparent;
+  border: none !important;
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+// Material Symbols Outlined
+.material-symbols-outlined {
+  font-family: "Material Symbols Rounded" !important;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.search-icon {
+  color: rgba(50, 71, 92, 0.54);
+}
+.icon-btn {
+  .mat-icon {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+    font-size: 1.5rem !important;
+  }
+}
+.mat-mdc-form-field {
+  margin-bottom: 0.625rem;
+}
+label {
+  margin: 0;
+}
+.mat-icon {
+  color: rgba(50, 71, 92, 0.54);
+}
+
+::-webkit-scrollbar {
+  width: 0.3125rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f3f3f3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f3f3f3;
+}
+
+//need to shift this class
+.w-100 {
+  width: 100%;
+}
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+// global border classes
+.border-1 {
+  border-radius: 0.25rem;
+}
+.border-2 {
+  border-radius: 0.5rem;
+}
+.border-3 {
+  border-radius: 0.75rem;
+}
+.border-4 {
+  border-radius: 1rem;
+}
+// font-weight
+.fw-500 {
+  font-weight: 500 !important;
+}
+.fw-600 {
+  font-weight: 600 !important;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+// ATOMIC SCSS
+// In Atomic CSS or SCSS, we break each css property in one single class (similar to that of tailwind). This helps in reducing the css size significantly!
+
+// *****NOTE- The media query for atomic css is still pending.
+
+// 1. flexbox
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-even {
+  justify-content: space-evenly;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+// 2. Width & Height
+
+.h-screen {
+  height: 100vh;
+}
+.h-auto {
+  height: auto;
+}
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+.w-half {
+  width: 44%;
+}
+@for $i from 0 through 100 {
+  .width-#{$i},
+  .w-#{$i} {
+    width: $i * $dimensions !important;
+  }
+
+  .height-#{$i},
+  .h-#{$i} {
+    height: $i * $dimensions !important;
+  }
+}
+
+// 3. Position
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.inherit {
+  position: inherit;
+}
+
+.fixed {
+  position: fixed;
+}
+.inset-0 {
+  inset: 0;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.left-0 {
+  left: 0;
+}
+.position-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.vertical-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.horizontal-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 4. Display
+
+.block {
+  display: block !important;
+}
+.inline {
+  display: inline;
+}
+.inline-block {
+  display: inline-block;
+}
+
+// 5. Overflow
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+// SPACING
+// Auto Margin
+.m-auto {
+  margin: auto;
+}
+.my-auto {
+  margin: auto 0;
+}
+.mx-auto {
+  margin: 0 auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+// Margin Loop
+@for $i from 0 through 12 {
+  .mt-#{$i} {
+    margin-top: $i * $spacing !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: $i * $spacing !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $i * $spacing !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i * $spacing !important;
+  }
+
+  .my-#{$i} {
+    margin-top: $i * $spacing !important;
+    margin-bottom: $i * $spacing !important;
+  }
+
+  .mx-#{$i} {
+    margin-right: $i * $spacing !important;
+    margin-left: $i * $spacing !important;
+  }
+
+  .ml-n-#{$i} {
+    margin-left: -$i * $spacing !important;
+  }
+  .m-#{$i} {
+    margin: $i * $spacing !important;
+  }
+}
+
+// Padding Loop
+@for $i from 0 through 12 {
+  .p-#{$i} {
+    padding: $i * $spacing !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: $i * $spacing !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: $i * $spacing !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $i * $spacing !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: $i * $spacing !important;
+  }
+
+  .py-#{$i} {
+    padding-top: $i * $spacing !important;
+    padding-bottom: $i * $spacing !important;
+  }
+
+  .px-#{$i} {
+    padding-right: $i * $spacing !important;
+    padding-left: $i * $spacing !important;
+  }
+}
+
+// 4. Utility Classes
+
+.pointer {
+  cursor: pointer;
+}
+.main-bg {
+  background-color: color("shades", "white");
+}
+.primary-light-bg {
+  background-color: color("primary", "light"); //#F3F1FF
+}
+.main-content-height {
+  height: calc(100% - 4.25rem);
+}
+.p-main {
+  padding: 1.6875rem 1.8125rem;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.create-btn {
+  min-width: 10rem !important;
+  height: 2.625rem !important;
+  .letter-spacing-0 {
+    letter-spacing: 0 !important;
+  }
+}
+.small-icon {
+  font-size: 1rem;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.lg-icon {
+  font-size: 1.25rem !important;
+}
+.upper-case {
+  text-transform: uppercase;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.heading-with-background {
+  color: #000000;
+  font-size: 1rem;
+  padding: 0.75rem 0.625rem;
+  background-color: #f3f1ff;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+// 5. Angular Material
+
+.mat-mdc-menu-content.mdc-list {
+  padding: 0;
+}
+.transition-400 {
+  transition: 10s;
+}
+// Google Color Palette defined: http://www.google.com/design/spec/style/color.html
+$red: (
+  "base": #ff0404,
+);
+$blue: (
+  "primary": #4198ff,
+  "base": #070029,
+  "darken": #090039,
+  "darken-2": #1272ca,
+  "darken-3": #0d76ee,
+  "lighten": #3a4580,
+  "lighten-1": #e7e8f0,
+  "lighten-2": #e5f5ff,
+  "lighten-3": #fafafc,
+  "lighten-4": #bcdeff,
+  "lighten-5": #68b5fd,
+  "lighten-6": #f2f9ff,
+  "lighten-7": #dff0ff,
+  "lighten-8": #e8edfb,
+  "lighten-11": #9ca8ba,
+);
+$green: (
+  "base": #1bd2a4,
+  "darken": #00af5a,
+  "darken-2": #16a883,
+  "darken-3": #4da63e,
+  "darken-4": #00a885,
+  "lighten": #e7faf6,
+  "lighten-1": #e1fbf5,
+  "lighten-2": #e9f5f0,
+  "lighten-3": #e5f8f0,
+  "lighten-base": #edfbf8,
+  "lighten-4": #b9ebde,
+  "lighten-5": #6be1c4,
+  "lighten-6": #e8faf6,
+  "lighten-7": #f5fffd,
+);
+$orange: (
+  "base": #ff8b55,
+  "lighten": #ffab27,
+  "lighten-2": #e8920c,
+  "lighten-3": #fff5e5,
+);
+$red: (
+  "base": #ed5267,
+  "darken": #c42339,
+  "darken-1": #ff6f6f,
+  "lighten": #e44258,
+  "lighten-2": #f9dade,
+  "lighten-3": #fbf5fb,
+);
+$shades: (
+  "black": #000000,
+  "white": #ffffff,
+  "transparent": transparent,
+);
+//Project Color pallete
+$primary: (
+  "main": #7868e6,
+  "light": #f3f1ff,
+  "dark": #6062e8,
+  "hover": #5456cc,
+  "light2": #f0ecff,
+  "light3": #696cff,
+  "lighten-4": #f5f3ff,
+  "lighten-5": #fbf9fd,
+);
+$text: (
+  "primary": #405189,
+  "secondary": #1a3447,
+  "dark": #2c2466,
+  "lighten": #748291,
+  "lighten-1": #92929d,
+  "red": #e97272,
+  "lighten-2": #9ca8ba,
+  "lighten-3": #8b97bd,
+  "lighten-4": #7a7e83,
+);
+$error: (
+  "main": #e34f4f,
+  "light": #ff5b3f,
+  "dark": #e8381a,
+);
+// empty-state Classes
+$purple: (
+  "lighten": #696cff,
+  "darken": #444791,
+  "darken-1": #3a3742,
+  "lighten-1": #5b3cc6,
+);
+$grey: (
+  "base": #000000,
+  "darken": #2b2b30,
+  "darken-2": #32475c,
+  "darken-3": #5b5b5b,
+  "darken-4": #979797,
+  "darken-5": #2a2a2a,
+  "darken-6": #495057,
+  "darken-7": #1b1b1e,
+  "light": #6e6d76,
+  "lighten-2": #b1b9c1,
+  "lighten-3": #f5f5f9,
+  "lighten-4": #8592a3,
+  "lighten-5": #c4c4c4,
+  "lighten-6": #7c7b7b,
+  "lighten-7": #d6d6d6,
+  "lighten-8": #ededed,
+  "lighten-9": #aaaaaa,
+  "lighten-10": #eae7ff,
+  "lighten-11": #e5e7eb,
+  "lighten-12": #8394a4,
+  "primary": #f9f9f9,
+  "border": #d6d6d6,
+  "border-2": #d9d9d9,
+  "stepper-border": #afabc9,
+  "form-caption": #6c6c6c,
+);
+
+//not is use
+$sky-blue: (
+  "base": #009e8e,
+  "lighten": #abfbf3,
+);
+$empty-red: (
+  "base": #ff6f41,
+  "lighten": #ffdace,
+);
+$empty-pink: (
+  "base": #ed5267,
+  "lighten": #ffdce1,
+);
+$colors: (
+  "red": $red,
+  "blue": $blue,
+  "green": $green,
+  "purple": $purple,
+  "orange": $orange,
+  "grey": $grey,
+  "shades": $shades,
+  "sky-blue": $sky-blue,
+  "empty-red": $empty-red,
+  "empty-pink": $empty-pink,
+  "primary": $primary,
+  "text": $text,
+  "error": $error,
+) !default;
+$lighten-blue: #3a4580;
+$red-lighten: #e44258;
+$red-lighten1: #f9dade;
+$yellow-lighten: #fff5e6;
+$yellow-lighten2: #fbf3e0;
+$input-grey: #909194;
+$white-2: #f2f2f2;
+$white-3: #ffffff0d;
+
+// Color Classes
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type== "base" {
+      .#{$color_name} {
+        background-color: $color_value !important;
+      }
+      .#{$color_name}-text {
+        color: $color_value !important;
+      }
+    } @else if $color_name != "shades" {
+      .#{$color_name}.#{$color_type} {
+        background-color: $color_value !important;
+      }
+      .#{$color_name}-text.text-#{$color_type} {
+        color: $color_value !important;
+      }
+    }
+  }
+}
+
+// Shade classes
+@each $color, $color_value in $shades {
+  .#{$color} {
+    background-color: $color_value !important;
+  }
+  .#{$color}-text {
+    color: $color_value !important;
+  }
+}
+
+// usage: color("name_of_color", "type_of_color")
+// to avoid to repeating map-get($colors, ...)
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @return null;
+}
+.input-border {
+  border: 1px solid color("grey", "border-2");
+}
+.fs-sm {
+  font-size: 12px !important;
+}
+.fs-md {
+  font-size: 14px !important;
+}
+.fs-lg {
+  font-size: 16px !important;
+}
+.fs-xl {
+  font-size: 18px !important;
+}
+.fs-2xl {
+  font-size: 20px !important;
+}
+.hide-div {
+  height: 0;
+  transition: 400ms;
+  overflow: hidden;
 }

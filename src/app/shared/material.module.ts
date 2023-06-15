@@ -24,11 +24,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoPopupComponent } from './todo-popup/todo-popup.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TodoPopupComponent
+  ],
   imports: [
     CommonModule,
     MatButtonModule,

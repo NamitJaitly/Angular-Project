@@ -1,0 +1,70 @@
+<h1 class="fw-500 p-4 primary light primary-text text-main">Reactive Form :</h1>
+<div class="p-4 mt-1 primary light border-2">
+  <span class="block fs-lg fw-500 mb-2"> Login With Your User Name </span>
+  <div class="p-4 input-border mt-4">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="block">
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Enter Your Name"
+            formControlName="userName"
+          />
+        </mat-form-field>
+      </div>
+      <div class="block">
+        <mat-form-field >
+          <input
+            matInput
+            type="{{ show ? 'text' : 'password' }}"
+            placeholder="Enter password"
+            formControlName="password"
+          />
+          <mat-icon class="material-symbols-outlined" (click)="showVisible()"> {{ show ? 'visibility' : 'visibility_off' }} </mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="block mb-4" >
+        <span class="fs-lg fw-500">Remember Me</span>
+        <input
+          matCheckbox
+          type="checkbox"
+          formControlName="rememberMe"
+          class="w-10"
+        />
+      </div>
+      <button mat-raised-button color="accent" type="submit">Login</button>
+    </form>
+  </div>
+</div>
+<h1 class="fw-500 p-4 primary light primary-text text-main mt-3">
+  Template Driven Form :
+</h1>
+<div class="p-4 mt-1 primary light border-2">
+  <form #templateForm="ngForm" (ngSubmit)="submitForm(templateFormModel)">
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="templateFormModel.Name"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="templateFormModel.Email"
+        required
+        email
+      />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

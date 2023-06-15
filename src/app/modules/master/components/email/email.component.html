@@ -1,0 +1,40 @@
+<div class="primary light p-4 border-2">
+  <div class="py-2 white-text">
+    <h3 class="fs-2xl fs-600 p-3 border-2 primary main">
+      Register Your Email and Phone Number
+    </h3>
+    <div *ngIf="!userName">
+      <span class="black-text"> No User Data Found!! </span>
+    </div>
+    <div *ngIf="userName">
+      <span class="black-text"> Welcome Aboard, {{ userName }}! </span>
+      <div class="p-6 flex align-center">
+        <div class="p-3 mr-2">
+          <span class="block black-text mb-2 fs-lg">Enter Email</span>
+          <div class="input-border w-70 p-4 border-2">
+            <input
+              type="text"
+              placeholder="enter Email"
+              (change)="setEmail($event)"
+            />
+          </div>
+        </div>
+        <div class="p-3 mr-2">
+          <span class="block black-text mb-2 fs-lg">Enter Number</span>
+          <div class="input-border w-70 p-4 border-2">
+            <input
+              type="text"
+              placeholder="enter number"
+              (change)="setPhone($event)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="p-7" style="padding-top: 0 !important">
+        <button mat-raised-button color="primary" (click)="saveData()">
+          Save Data
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

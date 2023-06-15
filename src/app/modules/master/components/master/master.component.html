@@ -1,0 +1,44 @@
+<h1 class="fw-500 p-4 primary light primary-text text-main">Welcome User</h1>
+<div [ngClass]="hide ? 'hide-div' : ''" class="transition-400">
+  <div class="p-4 flex align-center">
+    <div class="p-3 mr-2">
+      <span class="block black-text mb-2 fs-lg">Enter First Name</span>
+      <div class="input-border w-70 p-4 border-2">
+        <input
+          type="text"
+          placeholder="enter name"
+          value="{{ firstName }}"
+          (change)="setFirstName($event)"
+        />
+      </div>
+    </div>
+    <div class="p-3">
+      <span class="block black-text mb-2 fs-lg">Enter Last Name</span>
+      <div class="input-border w-70 p-4 border-2">
+        <input
+          type="text"
+          placeholder="enter name"
+          value="{{ lastName }}"
+          (change)="setLastName($event)"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="p-7" style="padding-top: 0 !important" >
+    <button mat-raised-button color="primary" (click)="submitName()">
+      Save
+    </button>
+  </div>
+</div>
+<div class="p-7" style="padding-top: 0 !important">
+  <app-email
+    userName="{{ setUserName }}"
+    (booleanEvent)="setVisibility($event)"
+  ></app-email>
+  <div *ngIf="visible">
+    <app-set-password></app-set-password>
+  </div>
+  <!-- <div class="mt-4" >
+    <app-add-todo></app-add-todo>
+  </div> -->
+</div>
